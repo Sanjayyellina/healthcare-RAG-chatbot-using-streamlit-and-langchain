@@ -92,18 +92,30 @@ The answer includes citations from your PDFs.
 ---
 
 ## Tech Stack
+
 Frontend: Streamlit
+
 RAG: LangChain RetrievalQA + FAISS
+
 Embeddings: HuggingFace (configurable)
+
 LLMs:
 OpenAI (default; plug in your API key)
+
 llama.cpp (local GGUF models; set LLAMACPP_MODEL_PATH)
+
 GPT4All (local; set GPT4ALL_MODEL)
+
 Persistence: Local filesystem (data/index/)
+
 Heads-up: HuggingFaceEmbeddings has a deprecation warning in recent LangChain. You can later move to langchain-huggingface with:
+
 pip install -U langchain-huggingface and
+
 from langchain_huggingface import HuggingFaceEmbeddings.
+
 Project Structure
+
 medgptpp_clean/
 ├── app.py                  # Streamlit UI
 ├── rag_pipeline.py         # Retriever + LLM chain assembly
