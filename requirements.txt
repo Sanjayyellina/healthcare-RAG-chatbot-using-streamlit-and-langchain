@@ -1,0 +1,25 @@
+# Core
+langchain>=0.2.15
+langchain-community>=0.2.12
+faiss-cpu>=1.8.0
+sentence-transformers>=2.7.0
+pypdf>=4.2.0
+beautifulsoup4>=4.12.3
+unstructured>=0.15.7
+python-dotenv>=1.0.1
+
+# LLM backends (choose what you use)
+openai>=1.40.0
+gpt4all>=2.7.0
+transformers>=4.43.3
+accelerate>=0.33.0
+
+# UI
+streamlit>=1.37.1
+
+# Evaluation
+ragas>=0.1.14
+trulens-eval>=0.29.0
+pandas>=2.2.2
+scikit-learn>=1.5.1
+datasets>=2.20.0
