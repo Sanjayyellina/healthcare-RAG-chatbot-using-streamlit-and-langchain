@@ -45,21 +45,21 @@ LLM generates a concise answer with inline source attributions.
 All runtime settings come from .env. Example:
 
 
-# LLM backend: openai | llama.cpp | gpt4all
+ LLM backend: openai | llama.cpp | gpt4all
 LLM_BACKEND=openai
 
-# OpenAI (if using cloud)
+ OpenAI (if using cloud)
 OPENAI_API_KEY=sk-REPLACE_ME
 OPENAI_MODEL=gpt-4o-mini
 
-# Embeddings
+ Embeddings
 EMBED_MODEL=sentence-transformers/all-MiniLM-L6-v2
 
-# Retrieval
+ Retrieval
 TOP_K=4
 TOKENIZERS_PARALLELISM=false
 
-# Local options (only if you choose them)
+ Local options (only if you choose them)
 LLAMACPP_MODEL_PATH=/absolute/path/to/Meta-Llama-3.1-8B-instruct.Q4_K_M.gguf
 GPT4ALL_MODEL=gguf-or-gpt4all-model-file
 
@@ -68,10 +68,12 @@ Backend switch: change LLM_BACKEND and (optionally) model paths, then restart.
 Data Ingestion
 
 # Drop your PDFs here:
+
 data/raw/
--└── who_guidelines.pdf
--└── nih_copd_review.pdf
--└── your_notes.pdf
+
+└── who_guidelines.pdf
+└── nih_copd_review.pdf
+└── your_notes.pdf
 
 # Then:
 python ingest.py
@@ -120,6 +122,7 @@ from langchain_huggingface import HuggingFaceEmbeddings.
 Project Structure
 
 medgptpp_clean/
+
 ├── app.py                  
 ├── rag_pipeline.py        
 ├── ingest.py              
