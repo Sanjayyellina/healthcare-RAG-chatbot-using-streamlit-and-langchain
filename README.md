@@ -60,17 +60,20 @@ TOP_K=4
 TOKENIZERS_PARALLELISM=false
 
 # Local options (only if you choose them)
-# LLAMACPP_MODEL_PATH=/absolute/path/to/Meta-Llama-3.1-8B-instruct.Q4_K_M.gguf
-# GPT4ALL_MODEL=gguf-or-gpt4all-model-file
+LLAMACPP_MODEL_PATH=/absolute/path/to/Meta-Llama-3.1-8B-instruct.Q4_K_M.gguf
+GPT4ALL_MODEL=gguf-or-gpt4all-model-file
+
+
 Backend switch: change LLM_BACKEND and (optionally) model paths, then restart.
 Data Ingestion
+
 # Drop your PDFs here:
 data/raw/
-└── who_guidelines.pdf
-└── nih_copd_review.pdf
-└── your_notes.pdf
+-└── who_guidelines.pdf
+-└── nih_copd_review.pdf
+-└── your_notes.pdf
 
-## Then:
+# Then:
 python ingest.py
 
 
@@ -80,10 +83,10 @@ PDFs → text → cleaned → chunked
 Embeddings via HuggingFace
 FAISS index written to data/index/
 
-## Run the App
+# Run the App
 streamlit run app.py
 
-## In the UI:
+# In the UI:
 Ask questions like:
 “What are early red-flag symptoms of sepsis?”
 “First-line therapy for community-acquired pneumonia?”
@@ -117,16 +120,16 @@ from langchain_huggingface import HuggingFaceEmbeddings.
 Project Structure
 
 medgptpp_clean/
-├── app.py                  # Streamlit UI
-├── rag_pipeline.py         # Retriever + LLM chain assembly
-├── ingest.py               # PDF -> embeddings -> FAISS index
+├── app.py                  
+├── rag_pipeline.py        
+├── ingest.py              
 ├── requirements.txt
-├── .env.example            # sample config (no secrets)
+├── .env.example            
 ├── data/
-│   ├── raw/                # your PDFs (you add these)
-│   └── index/              # FAISS store (generated)
+│   ├── raw/                
+│   └── index/             
 └── docs/
-    └── screenshot.png      # UI screenshot (add one)
+    └── screenshot.png      
 
 
 ---
